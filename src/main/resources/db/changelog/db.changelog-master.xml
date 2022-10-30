@@ -11,4 +11,7 @@
     <changeSet id="02_insert_data" author="pascalcode">
         <sqlFile relativeToChangelogFile="true" path="sql/02_insert_data.sql"/>
     </changeSet>
+    <changeSet id="03_create_user" author="pascalcode">
+        <sqlFile relativeToChangelogFile="true" path="sql/03_create_user.sql"/>
+    </changeSet>
 </databaseChangeLog>
