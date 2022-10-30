@@ -1,0 +1,45 @@
+insert into country (id, name) values (1, 'Uzbekistan');
+insert into country (id, name) values (2, 'Netherlands');
+
+insert into city (id, name, country_id) values (1, 'Tashkent', 1);
+insert into city (id, name, country_id) values (2, 'Samarkand', 1);
+insert into city (id, name, country_id) values (3, 'Namangan', 1);
+insert into city (id, name, country_id) values (4, 'Andijan', 1);
+insert into city (id, name, country_id) values (5, 'Nukus', 1);
+insert into city (id, name, country_id) values (6, 'Fergana', 1);
+insert into city (id, name, country_id) values (7, 'Bukhara', 1);
+insert into city (id, name, country_id) values (8, 'Qarshi', 1);
+insert into city (id, name, country_id) values (9, 'Kokand', 1);
+insert into city (id, name, country_id) values (10, 'Margilan', 1);
+
+insert into city (id, name, country_id) values (11, 'Alkmaar', 2);
+insert into city (id, name, country_id) values (12, 'Amsterdam', 2);
+insert into city (id, name, country_id) values (13, 'Den Helder', 2);
+insert into city (id, name, country_id) values (14, 'Edam', 2);
+insert into city (id, name, country_id) values (15, 'Enkhuizen', 2);
+insert into city (id, name, country_id) values (16, 'Haarlem', 2);
+insert into city (id, name, country_id) values (17, 'Heerhugowaard', 2);
+insert into city (id, name, country_id) values (18, 'Hilversum', 2);
+insert into city (id, name, country_id) values (19, 'Hoorn', 2);
+insert into city (id, name, country_id) values (20, 'Laren', 2);
+
+insert into weather (id, temperature, humidity, city_id) values (1, 12, 81, 1);
+insert into weather (id, temperature, humidity, city_id) values (2, 13, 87, 2);
+insert into weather (id, temperature, humidity, city_id) values (3, 12, 82, 3);
+insert into weather (id, temperature, humidity, city_id) values (4, 17, 83, 4);
+insert into weather (id, temperature, humidity, city_id) values (5, 16, 83, 5);
+insert into weather (id, temperature, humidity, city_id) values (6, 17, 73, 6);
+insert into weather (id, temperature, humidity, city_id) values (7, 21, 85, 7);
+insert into weather (id, temperature, humidity, city_id) values (8, 21, 79, 8);
+insert into weather (id, temperature, humidity, city_id) values (9, 20, 79, 9);
+insert into weather (id, temperature, humidity, city_id) values (10, 22, 78, 10);
+insert into weather (id, temperature, humidity, city_id) values (11, 12, 56, 11);
+insert into weather (id, temperature, humidity, city_id) values (12, 13, 87, 12);
+insert into weather (id, temperature, humidity, city_id) values (13, 22, 87, 13);
+insert into weather (id, temperature, humidity, city_id) values (14, 18, 98, 14);
+insert into weather (id, temperature, humidity, city_id) values (15, 17, 87, 15);
+insert into weather (id, temperature, humidity, city_id) values (16, 20, 67, 16);
+insert into weather (id, temperature, humidity, city_id) values (17, 18, 87, 17);
+insert into weather (id, temperature, humidity, city_id) values (18, 20, 80, 18);
+insert into weather (id, temperature, humidity, city_id) values (19, 19, 90, 19);
+insert into weather (id, temperature, humidity, city_id) values (20, 17, 70, 20);
