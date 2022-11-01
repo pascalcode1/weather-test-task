@@ -1,0 +1,12 @@
+package ru.pascalcode.weathertest.controller;
+
+/**
+ * Names of roles in Keycloak.
+ */
+public class RoleConstant {
+
+    public static final String ADMIN = "ADMIN";
+
+    public static final String USER = "USER";
+
+}

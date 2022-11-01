@@ -1,8 +1,6 @@
 package ru.pascalcode.weathertest.controller;
 
 import io.swagger.annotations.Api;
-//import io.swagger.annotations.ApiResponse;
-//import io.swagger.annotations.ApiResponses;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -20,6 +18,11 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import ru.pascalcode.weathertest.model.City;
 import ru.pascalcode.weathertest.service.CityService;
+
+import javax.annotation.security.RolesAllowed;
+
+import static ru.pascalcode.weathertest.controller.RoleConstant.ADMIN;
+import static ru.pascalcode.weathertest.controller.RoleConstant.USER;
 
 
 /**
@@ -50,6 +53,7 @@ public class CityController {
                     })
     })
     @GetMapping("cities-list")
+    @RolesAllowed({ADMIN, USER})
     public Flux<City> citiesList() {
         return cityService.citiesList();
     }
@@ -66,6 +70,7 @@ public class CityController {
                     })
     })
     @PostMapping("edit-city")
+    @RolesAllowed(ADMIN)
     public Mono<City> editCity(@RequestBody City city) {
         return cityService.editCity(city);
     }

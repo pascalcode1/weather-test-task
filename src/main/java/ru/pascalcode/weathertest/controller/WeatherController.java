@@ -16,6 +16,10 @@ import reactor.core.publisher.Mono;
 import ru.pascalcode.weathertest.model.Weather;
 import ru.pascalcode.weathertest.service.WeatherService;
 
+import javax.annotation.security.RolesAllowed;
+
+import static ru.pascalcode.weathertest.controller.RoleConstant.ADMIN;
+
 /**
  * Weather Controller.
  */
@@ -43,6 +47,7 @@ public class WeatherController {
                     })
     })
     @PostMapping("update-city-weather")
+    @RolesAllowed({ADMIN})
     public Mono<Weather> updateCityWeather(@RequestBody Weather weather) {
         return weatherService.updateCityWeather(weather);
     }

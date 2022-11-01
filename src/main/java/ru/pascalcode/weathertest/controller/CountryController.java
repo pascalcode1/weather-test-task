@@ -19,6 +19,10 @@ import reactor.core.publisher.Mono;
 import ru.pascalcode.weathertest.model.Country;
 import ru.pascalcode.weathertest.service.CountryService;
 
+import javax.annotation.security.RolesAllowed;
+
+import static ru.pascalcode.weathertest.controller.RoleConstant.ADMIN;
+
 /**
  * Country Controller.
  */
@@ -47,6 +51,7 @@ public class CountryController {
                     })
     })
     @GetMapping("countries-list")
+    @RolesAllowed({ADMIN})
     public Flux<Country> citiesList() {
         return countryService.countriesList();
     }
@@ -63,6 +68,7 @@ public class CountryController {
                     })
     })
     @PostMapping("edit-country")
+    @RolesAllowed({ADMIN})
     public Mono<Country> editCity(@RequestBody Country country) {
         return countryService.editCountry(country);
     }

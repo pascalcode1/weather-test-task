@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import ru.pascalcode.weathertest.model.Country;
 import ru.pascalcode.weathertest.model.User;
 import ru.pascalcode.weathertest.service.UserService;
+
+import javax.annotation.security.RolesAllowed;
+
+import static ru.pascalcode.weathertest.controller.RoleConstant.ADMIN;
 
 /**
  * User Controller.
@@ -49,6 +52,7 @@ public class UserController {
                     })
     })
     @GetMapping("user-list")
+    @RolesAllowed({ADMIN})
     public Flux<User> userList() {
         return userService.userList();
     }
@@ -65,6 +69,7 @@ public class UserController {
                     })
     })
     @PostMapping("edit-user")
+    @RolesAllowed({ADMIN})
     public Mono<User> editUser(@RequestBody User user) {
         return userService.editUser(user);
     }
