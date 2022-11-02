@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class SwaggerConfig {
 
     @Bean
-    public Docket exampleApi() {
+    public Docket swagger() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("ru.pascalcode.weather"))
