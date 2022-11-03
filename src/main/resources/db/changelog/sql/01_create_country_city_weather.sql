@@ -11,6 +11,7 @@ create table if not exists city (
     id          bigserial not null,
     name        varchar(64),
     country_id  integer not null,
+    visible     boolean default true,
     constraint pk_city_id primary key (id),
     constraint fk_city_country foreign key (country_id) references country (id)
 );
@@ -18,6 +19,7 @@ comment on table city is 'Cities';
 comment on column city.id is 'ID';
 comment on column city.name is 'City name';
 comment on column city.country_id is 'Country of the city';
+comment on column city.visible is 'Visibility of city';
 
 create table if not exists weather (
     id          bigserial not null,

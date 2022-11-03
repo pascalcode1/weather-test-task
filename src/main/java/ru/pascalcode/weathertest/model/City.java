@@ -32,4 +32,10 @@ public class City {
      */
     @Schema(description = "Country's ID of the city")
     private Long countryId;
+
+    /**
+     * Visibility for users.
+     */
+    @Schema(description = "Visibility for users")
+    private Boolean visible;
 }

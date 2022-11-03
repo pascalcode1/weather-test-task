@@ -52,7 +52,7 @@ public class UserController {
                     })
     })
     @GetMapping("user-list")
-    @RolesAllowed({ADMIN})
+    @RolesAllowed(ADMIN)
     public Flux<User> userList() {
         return userService.userList();
     }
@@ -69,7 +69,7 @@ public class UserController {
                     })
     })
     @PostMapping("edit-user")
-    @RolesAllowed({ADMIN})
+    @RolesAllowed(ADMIN)
     public Mono<User> editUser(@RequestBody User user) {
         return userService.editUser(user);
     }

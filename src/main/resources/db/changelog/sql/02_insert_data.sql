@@ -1,27 +1,28 @@
 insert into country (id, name) values (1, 'Uzbekistan');
 insert into country (id, name) values (2, 'Netherlands');
+SELECT setval('country_id_seq', 2, true);
 
-insert into city (id, name, country_id) values (1, 'Tashkent', 1);
-insert into city (id, name, country_id) values (2, 'Samarkand', 1);
-insert into city (id, name, country_id) values (3, 'Namangan', 1);
-insert into city (id, name, country_id) values (4, 'Andijan', 1);
-insert into city (id, name, country_id) values (5, 'Nukus', 1);
-insert into city (id, name, country_id) values (6, 'Fergana', 1);
-insert into city (id, name, country_id) values (7, 'Bukhara', 1);
-insert into city (id, name, country_id) values (8, 'Qarshi', 1);
-insert into city (id, name, country_id) values (9, 'Kokand', 1);
-insert into city (id, name, country_id) values (10, 'Margilan', 1);
-
-insert into city (id, name, country_id) values (11, 'Alkmaar', 2);
-insert into city (id, name, country_id) values (12, 'Amsterdam', 2);
-insert into city (id, name, country_id) values (13, 'Den Helder', 2);
-insert into city (id, name, country_id) values (14, 'Edam', 2);
-insert into city (id, name, country_id) values (15, 'Enkhuizen', 2);
-insert into city (id, name, country_id) values (16, 'Haarlem', 2);
-insert into city (id, name, country_id) values (17, 'Heerhugowaard', 2);
-insert into city (id, name, country_id) values (18, 'Hilversum', 2);
-insert into city (id, name, country_id) values (19, 'Hoorn', 2);
-insert into city (id, name, country_id) values (20, 'Laren', 2);
+insert into city (id, name, country_id, visible) values (1, 'Tashkent', 1, true);
+insert into city (id, name, country_id, visible) values (2, 'Samarkand', 1, true);
+insert into city (id, name, country_id, visible) values (3, 'Namangan', 1, true);
+insert into city (id, name, country_id, visible) values (4, 'Andijan', 1, true);
+insert into city (id, name, country_id, visible) values (5, 'Nukus', 1, true);
+insert into city (id, name, country_id, visible) values (6, 'Fergana', 1, true);
+insert into city (id, name, country_id, visible) values (7, 'Bukhara', 1, true);
+insert into city (id, name, country_id, visible) values (8, 'Qarshi', 1, true);
+insert into city (id, name, country_id, visible) values (9, 'Kokand', 1, true);
+insert into city (id, name, country_id, visible) values (10, 'Margilan', 1, true);
+insert into city (id, name, country_id, visible) values (11, 'Alkmaar', 2, true);
+insert into city (id, name, country_id, visible) values (12, 'Amsterdam', 2, true);
+insert into city (id, name, country_id, visible) values (13, 'Den Helder', 2, true);
+insert into city (id, name, country_id, visible) values (14, 'Edam', 2, true);
+insert into city (id, name, country_id, visible) values (15, 'Enkhuizen', 2, true);
+insert into city (id, name, country_id, visible) values (16, 'Haarlem', 2, true);
+insert into city (id, name, country_id, visible) values (17, 'Heerhugowaard', 2, true);
+insert into city (id, name, country_id, visible) values (18, 'Hilversum', 2, true);
+insert into city (id, name, country_id, visible) values (19, 'Hoorn', 2, true);
+insert into city (id, name, country_id, visible) values (20, 'Laren', 2, true);
+SELECT setval('city_id_seq', 20, true);
 
 insert into weather (id, temperature, humidity, city_id) values (1, 12, 81, 1);
 insert into weather (id, temperature, humidity, city_id) values (2, 13, 87, 2);
@@ -43,3 +44,4 @@ insert into weather (id, temperature, humidity, city_id) values (17, 18, 87, 17)
 insert into weather (id, temperature, humidity, city_id) values (18, 20, 80, 18);
 insert into weather (id, temperature, humidity, city_id) values (19, 19, 90, 19);
 insert into weather (id, temperature, humidity, city_id) values (20, 17, 70, 20);
+SELECT setval('weather_id_seq', 20, true);

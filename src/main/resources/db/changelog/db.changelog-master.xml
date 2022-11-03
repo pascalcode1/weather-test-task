@@ -14,4 +14,10 @@
     <changeSet id="03_create_user" author="pascalcode">
         <sqlFile relativeToChangelogFile="true" path="sql/03_create_user.sql"/>
     </changeSet>
+    <changeSet id="04_create_subscriptions" author="pascalcode">
+        <sqlFile relativeToChangelogFile="true" path="sql/04_create_subscription.sql"/>
+    </changeSet>
+    <changeSet id="05_create_subscription_view" author="pascalcode">
+        <sqlFile relativeToChangelogFile="true" path="sql/05_create_subscription_view.sql"/>
+    </changeSet>
 </databaseChangeLog>
