@@ -8,5 +8,5 @@ import ru.pascalcode.weathertest.model.SubscriptionView;
 @Repository
 public interface SubscriptionViewRepository extends ReactiveCrudRepository<SubscriptionView, Long> {
 
-    Flux<SubscriptionView> findAllByUserId(Long id);
+    Flux<SubscriptionView> findAllByUserId(String userId);
 }

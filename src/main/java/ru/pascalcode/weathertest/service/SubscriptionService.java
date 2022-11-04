@@ -24,13 +24,20 @@ public class SubscriptionService {
         this.subscriptionRepository = subscriptionRepository;
     }
 
-
-    public Flux<SubscriptionView> getSubscriptions() {
+    public Flux<SubscriptionView> getCurrentUserSubscriptions() {
         return subscriptionViewRepository.findAllByUserId(userService.getCurrentUserId());
+    }
+
+    public Flux<SubscriptionView> getAllSubscriptions() {
+        return subscriptionViewRepository.findAll();
     }
 
     public Mono<Subscription> subscribeToCity(Long cityId) {
         Subscription subscription = new Subscription(userService.getCurrentUserId(), cityId);
         return subscriptionRepository.save(subscription);
+    }
+
+    public Mono<Void> deleteSubscription(Subscription subscription) {
+        return subscriptionRepository.delete(subscription);
     }
 }

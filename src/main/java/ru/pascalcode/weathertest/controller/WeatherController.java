@@ -47,7 +47,7 @@ public class WeatherController {
                     })
     })
     @PostMapping("update-city-weather")
-    @RolesAllowed({ADMIN})
+    @RolesAllowed(ADMIN)
     public Mono<Weather> updateCityWeather(@RequestBody Weather weather) {
         return weatherService.updateCityWeather(weather);
     }

@@ -18,12 +18,12 @@ public class Subscription {
     private Long id;
 
     @Schema(description = "Subscribed User ID")
-    private Long userId;
+    private String userId;
 
     @Schema(description = "City ID")
     private Long cityId;
 
-    public Subscription(Long userId, Long cityId) {
+    public Subscription(String userId, Long cityId) {
         this.userId = userId;
         this.cityId = cityId;
     }

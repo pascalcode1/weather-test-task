@@ -19,7 +19,7 @@ public class SubscriptionView {
     private Long id;
 
     @Schema(description = "User ID")
-    private Long userId;
+    private String userId;
 
     @Schema(description = "City name")
     private String cityName;
