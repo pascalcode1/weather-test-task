@@ -24,7 +24,17 @@ public class CityService {
         return cityRepository.findAll();
     }
 
+    public Mono<City> addCity(City city) {
+        if (city.getId() != null) {
+            throw new IllegalArgumentException("The ID field of new City entity must be null");
+        }
+        return cityRepository.save(city);
+    }
+
     public Mono<City> editCity(City city) {
+        if (city.getId() == null) {
+            throw new IllegalArgumentException("The ID field of the City entity must not be null");
+        }
         return cityRepository.save(city);
     }
 }

@@ -52,7 +52,7 @@ public class CountryController {
     })
     @GetMapping("countries-list")
     @RolesAllowed({ADMIN})
-    public Flux<Country> citiesList() {
+    public Flux<Country> countriesList() {
         return countryService.countriesList();
     }
 
@@ -69,7 +69,7 @@ public class CountryController {
     })
     @PostMapping("edit-country")
     @RolesAllowed({ADMIN})
-    public Mono<Country> editCity(@RequestBody Country country) {
+    public Mono<Country> editCountry(@RequestBody Country country) {
         return countryService.editCountry(country);
     }
 }

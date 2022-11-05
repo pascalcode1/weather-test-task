@@ -74,4 +74,21 @@ public class CityController {
     public Mono<City> editCity(@RequestBody City city) {
         return cityService.editCity(city);
     }
+
+    @Operation(summary = "Add city", tags = "CityController")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "City was added",
+                    content = {
+                            @Content(
+                                    mediaType = "application/json",
+                                    schema = @Schema(implementation = City.class))
+                    })
+    })
+    @PostMapping("add-city")
+    @RolesAllowed(ADMIN)
+    public Mono<City> addCity(@RequestBody City city) {
+        return cityService.addCity(city);
+    }
 }

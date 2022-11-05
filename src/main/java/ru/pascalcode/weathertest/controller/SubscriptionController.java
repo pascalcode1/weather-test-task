@@ -20,6 +20,7 @@ import ru.pascalcode.weathertest.model.Subscription;
 import ru.pascalcode.weathertest.model.SubscriptionView;
 import ru.pascalcode.weathertest.service.SubscriptionService;
 
+import java.nio.file.AccessDeniedException;
 import javax.annotation.security.RolesAllowed;
 
 import static ru.pascalcode.weathertest.controller.RoleConstant.ADMIN;
@@ -99,7 +100,7 @@ public class SubscriptionController {
     })
     @DeleteMapping("unsubscribe")
     @RolesAllowed(USER)
-    public Mono<Void> deleteSubscription(@RequestBody Subscription subscription) {
-        return subscriptionService.deleteSubscription(subscription);
+    public Mono<Void> unsubscribe(@RequestBody Subscription subscription) throws AccessDeniedException {
+        return subscriptionService.unsubscribe(subscription);
     }
 }

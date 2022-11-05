@@ -2,6 +2,7 @@ package ru.pascalcode.weathertest.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -12,6 +13,7 @@ import org.springframework.data.annotation.Id;
 @ApiModel(description = "Weather entity")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Weather {
 
     /**

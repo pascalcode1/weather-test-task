@@ -8,6 +8,12 @@ import ru.pascalcode.weathertest.model.SubscriptionView;
 import ru.pascalcode.weathertest.repository.SubscriptionRepository;
 import ru.pascalcode.weathertest.repository.SubscriptionViewRepository;
 
+import java.nio.file.AccessDeniedException;
+import java.util.Objects;
+
+/**
+ * Subscription Service.
+ */
 @Service
 public class SubscriptionService {
 
@@ -24,6 +30,11 @@ public class SubscriptionService {
         this.subscriptionRepository = subscriptionRepository;
     }
 
+    /**
+     * Get all subscriptions for the current user.
+     *
+     * @return subscriptions.
+     */
     public Flux<SubscriptionView> getCurrentUserSubscriptions() {
         return subscriptionViewRepository.findAllByUserId(userService.getCurrentUserId());
     }
@@ -37,7 +48,16 @@ public class SubscriptionService {
         return subscriptionRepository.save(subscription);
     }
 
-    public Mono<Void> deleteSubscription(Subscription subscription) {
-        return subscriptionRepository.delete(subscription);
+    /**
+     * Deletes subscription.
+     *
+     * @param subscription
+     * @return
+     */
+    public Mono<Void> unsubscribe(Subscription subscription) throws AccessDeniedException {
+        if (Objects.equals(subscription.getUserId(), userService.getCurrentUserId())) {
+            return subscriptionRepository.delete(subscription);
+        }
+        throw new AccessDeniedException("Access denied!");
     }
 }
