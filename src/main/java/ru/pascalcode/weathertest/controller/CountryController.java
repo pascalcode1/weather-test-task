@@ -39,7 +39,7 @@ public class CountryController {
         this.countryService = countryService;
     }
 
-    @Operation(summary = "Gets list of countries", tags = "CountryController")
+    @Operation(summary = "Gets list of countries (ADMIN)", tags = "CountryController")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -51,12 +51,12 @@ public class CountryController {
                     })
     })
     @GetMapping("countries-list")
-    @RolesAllowed({ADMIN})
+    @RolesAllowed(ADMIN)
     public Flux<Country> countriesList() {
         return countryService.countriesList();
     }
 
-    @Operation(summary = "Edit Country", tags = "CountryController")
+    @Operation(summary = "Edit Country (ADMIN)", tags = "CountryController")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -68,7 +68,7 @@ public class CountryController {
                     })
     })
     @PostMapping("edit-country")
-    @RolesAllowed({ADMIN})
+    @RolesAllowed(ADMIN)
     public Mono<Country> editCountry(@RequestBody Country country) {
         return countryService.editCountry(country);
     }

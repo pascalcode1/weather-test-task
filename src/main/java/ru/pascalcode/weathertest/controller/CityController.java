@@ -41,7 +41,7 @@ public class CityController {
         this.cityService = cityService;
     }
 
-    @Operation(summary = "Gets list of cities", tags = "CityController")
+    @Operation(summary = "Gets list of cities (ADMIN, USER)", tags = "CityController")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -58,7 +58,7 @@ public class CityController {
         return cityService.citiesList();
     }
 
-    @Operation(summary = "Edit city", tags = "CityController")
+    @Operation(summary = "Edit city (ADMIN)", tags = "CityController")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -75,7 +75,7 @@ public class CityController {
         return cityService.editCity(city);
     }
 
-    @Operation(summary = "Add city", tags = "CityController")
+    @Operation(summary = "Add city (ADMIN)", tags = "CityController")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",

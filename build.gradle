@@ -33,6 +33,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.springframework:spring-jdbc'
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    implementation 'org.json:json:20220924'
 
     implementation 'org.liquibase:liquibase-core'
 

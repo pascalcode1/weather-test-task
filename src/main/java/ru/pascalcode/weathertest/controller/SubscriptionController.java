@@ -38,7 +38,7 @@ public class SubscriptionController {
         this.subscriptionService = subscriptionService;
     }
 
-    @Operation(summary = "A method that allows users to subscribe to the city's weather", tags = "SubscriptionController")
+    @Operation(summary = "A method that allows users to subscribe to the city's weather (USER)", tags = "SubscriptionController")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -55,7 +55,7 @@ public class SubscriptionController {
         return subscriptionService.subscribeToCity(cityId);
     }
 
-    @Operation(summary = "A method that returns list of subscriptions for current user", tags = "SubscriptionController")
+    @Operation(summary = "A method that returns list of subscriptions for current user (USER)", tags = "SubscriptionController")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -72,7 +72,7 @@ public class SubscriptionController {
         return subscriptionService.getCurrentUserSubscriptions();
     }
 
-    @Operation(summary = "A method that returns list of all subscriptions for admin", tags = "SubscriptionController")
+    @Operation(summary = "A method that returns list of all subscriptions for admin (ADMIN)", tags = "SubscriptionController")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
@@ -89,7 +89,7 @@ public class SubscriptionController {
         return subscriptionService.getAllSubscriptions();
     }
 
-    @Operation(summary = "A method that allows unsubscribe from the weather", tags = "SubscriptionController")
+    @Operation(summary = "A method that allows unsubscribe from the weather (USER)", tags = "SubscriptionController")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",

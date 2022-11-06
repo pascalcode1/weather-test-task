@@ -35,7 +35,7 @@ public class WeatherController {
         this.weatherService = weatherService;
     }
 
-    @Operation(summary = "Update Country", tags = "WeatherController")
+    @Operation(summary = "Update Country (ADMIN)", tags = "WeatherController")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
